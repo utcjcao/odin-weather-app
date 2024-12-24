@@ -6,7 +6,7 @@ async function fetchWeatherData(location) {
     const response = await fetch(
       "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/" +
         location +
-        "?key=VGWSEMM6QDU6P6M7RFPQQWCDZ",
+        "?key=VGWSEMM6QDU6P6M7RFPQQWCDZ", // this is my api key but its free so its fine
       {
         mode: "cors",
       }
@@ -42,7 +42,14 @@ function parseWeatherData(data) {
 }
 
 async function userQuery(location) {
-  let data = await fetchWeatherData(location);
+  let data = null;
+  if (location == "") {
+    data = {
+      days: [],
+    };
+  } else {
+    data = await fetchWeatherData(location);
+  }
   return parseWeatherData(data);
 }
 

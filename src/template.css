@@ -1,14 +1,41 @@
 body {
+    font-family: monospace;
     height: 100vh;
+    gap: 10px;
+    display: grid;
+    grid-template-rows: 1fr 10fr;
+    padding: 0;
+    margin: 0;
+}
+
+.header {
+    border: 1px solid black;
+    display: flex;
+    padding: 10px;
+    gap: 10px;
+    align-items: center;
+    justify-content: space-around;
+    background-color: black;
+    color: white;
+}
+
+.header button, .header input {
+    border: 1px solid white;
+    background-color: black;
+    color: white;
+}
+
+.header input::placeholder {
+    color: white;
 }
 
 #days-container {
     display: grid;
-    grid-auto-flow: column;
     gap: 10px;
-    /* grid-template-columns: repeat(auto-fill, 200px); */
-    grid-template-columns: repeat(auto-fill, 200px);
-    /* grid-template-rows: repeat(auto-fill, 200px); */
+    grid-template-rows: repeat(auto-fill, 200px);
+    grid-template-columns: repeat(7, minmax(200px, 1fr));
+    padding: 10px;
+
 }
 
 .day-card {
@@ -16,7 +43,5 @@ body {
     display: grid;
     grid-auto-flow: row;
     gap: 10px;
-    /* height: 200px; */
-    /* width: 200px; */
     padding: 10px;
 }
