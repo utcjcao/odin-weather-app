@@ -1,0 +1,22 @@
+body {
+    height: 100vh;
+}
+
+#days-container {
+    display: grid;
+    grid-auto-flow: column;
+    gap: 10px;
+    /* grid-template-columns: repeat(auto-fill, 200px); */
+    grid-template-columns: repeat(auto-fill, 200px);
+    /* grid-template-rows: repeat(auto-fill, 200px); */
+}
+
+.day-card {
+    border: 1px solid black;
+    display: grid;
+    grid-auto-flow: row;
+    gap: 10px;
+    /* height: 200px; */
+    /* width: 200px; */
+    padding: 10px;
+}
